@@ -1,44 +1,50 @@
-## Automated Network Threat Detection and Alert System
+<h1>Automated Network Threat Detection and Alert System</h1>
 
-### Overview
-I developed an automated network threat detection and alert system designed to monitor network traffic for malicious activity. The system utilizes Wireshark/Tshark for packet capture, Python for automation, and VirusTotal for threat intelligence integration. It performs regular network scans, extracts IP addresses, checks them for threats, and notifies via email when malicious activity is detected.
+<p>
+    This project implements an <strong>Automated Network Threat Detection System</strong> that monitors network traffic and checks for malicious IP addresses using data from <strong>VirusTotal</strong>. The system automates periodic network captures and alerts the user if malicious IPs are detected. The system is designed to help network administrators or security enthusiasts monitor for potential threats and respond accordingly.
+</p>
 
-### Key Features
-- **Automated Network Traffic Capture**: Implemented periodic network packet capture using Wireshark/Tshark.
-- **Threat Intelligence Integration**: Extracted IP addresses and checked them against VirusTotal's threat database to identify malicious activity.
-- **Logging of Malicious IPs**: Only malicious IPs are logged, focusing on actionable items to keep the output clean.
-- **Email Alert System**: Configured an automated email alert system to notify stakeholders whenever malicious IPs are detected.
-- **AI-Assisted Development**: Leveraged AI tools to efficiently develop and customize the Python script, showcasing the ability to utilize cutting-edge technology to improve workflow.
+<h2>Key Features:</h2>
+<ul>
+    <li><strong>Automated Packet Capture:</strong>
+        <p>
+            The system uses <strong>Tshark</strong> (the command-line version of Wireshark) to capture network traffic on a specified interface for a set duration. IP addresses are extracted from the captured packets and checked against the <strong>VirusTotal</strong> database for malicious activity.
+        </p>
+    </li>
+    <li><strong>Malicious IP Detection:</strong>
+        <p>
+            IP addresses captured are verified against VirusTotal to detect known malicious IPs. If an IP has been flagged by VirusTotal, an alert is sent via email to notify the administrator.
+        </p>
+    </li>
+    <li><strong>Email Alerts:</strong>
+        <p>
+            If malicious IPs are detected, the system sends an email alert with the details of the threat. This allows for quick responses and potential remediation actions.
+        </p>
+    </li>
+    <li><strong>CSV Logging of Malicious IPs:</strong>
+        <p>
+            Detected malicious IPs are logged in a CSV file for further analysis and tracking over time.
+        </p>
+    </li>
+    <li><strong>Legal and Privacy Considerations:</strong>
+        <p>
+            The system has been updated to ensure compliance with privacy laws and regulations. 
+            A user consent feature has been added to notify and request permission before any packet capture begins. This ensures that no network monitoring occurs without the user’s explicit approval, mitigating potential privacy violations. This feature helps ensure the program is only used on networks where the user has appropriate authorization, aligning with <em>wiretap laws</em> and <em>privacy regulations</em>.
+        </p>
+    </li>
+</ul>
 
-### Technologies and Tools Used
-- **Wireshark/Tshark**: Network packet capture and analysis.
-- **Python**: Scripting for automation of scanning, IP extraction, and threat analysis.
-- **VirusTotal API**: Integrated to verify the reputation of IP addresses and identify threats.
-- **Email Notification System**: Configured for proactive incident response when threats are detected.
-- **AI Tools**: Utilized AI, such as ChatGPT, to assist in development, enabling efficient prototyping and problem-solving.
+<h2>Legal and Privacy Considerations:</h2>
+<p>
+    In recognition of the need for lawful network monitoring, this system prompts the user for permission before capturing any network traffic. This prompt ensures that the user is aware of the operation and has authorized the monitoring in the current environment, especially when using networks not owned by the user. This feature protects against unintended violations of privacy and ensures compliance with <strong>local, state, and federal laws</strong>.
+</p>
 
-### Impact and Skills Demonstrated
-- **Network Security Automation**: Created a system that automates network monitoring, demonstrating practical skills in network security and automation.
-- **Threat Intelligence**: Integrated external threat intelligence (VirusTotal) to enrich network traffic data, showcasing skills in using third-party APIs for cybersecurity.
-- **Incident Response**: Developed an alert mechanism to support proactive threat management, highlighting the ability to design systems for real-time incident detection.
-- **AI Utilization**: Used AI to assist with code generation and problem-solving, demonstrating an innovative approach to project development.
+<h2>Requirements:</h2>
+<ul>
+    <li>Tshark (Wireshark command-line tool)</li>
+    <li>VirusTotal API Key</li>
+    <li>Python 3</li>
+</ul>
 
-### Project Structure
-```
-root
-├── capture.pcapng              # Example network capture file
-├── ips.txt                    # Extracted IP addresses from network capture
-├── malicious_ips.csv          # Logged malicious IP addresses (CSV format)
-├── network_threat_detection.py # Main Python script for automated scanning
-├── README.md                  # Project overview and documentation (this file)
-```
-
-### License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-### Acknowledgements
-- **VirusTotal** for providing the API to check IP addresses.
-- **Wireshark** for providing tools for network traffic capture.
-- **OpenAI** for assisting in the development of this project using ChatGPT.
 
 
